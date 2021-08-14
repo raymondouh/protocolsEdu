@@ -22,15 +22,16 @@ body{
   left: 0;
   height: 90px;
   align-items: center;
-  justify-content: space-between;
-}
+ }
 .container{
    max-width: 1000px;
    margin-right: auto;
    position: relative;
    padding: 75px;
 }
-.toggle-burgerP{}
+.toggle-burger{
+  display: none;
+}
 .navigation{
   display: flex;
   flex-wrap: nowrap;
@@ -43,6 +44,9 @@ body{
 .nav-item{
   font-size: 1.3rem;
   font-family: 'Roboto', sans-serif;
+}
+.nav-item a:hover{
+   color: #00BFFF;
 }
 .nav-item:hover{
  transform: scale(1.13);
@@ -73,7 +77,8 @@ body{
   -webkit-text-fill-color: transparent;
   color: #0B2349;
   font-size: 4rem;
-  max-width: 500px;
+  max-width: 580px;
+  line-height: 1.2;
 }
 .text-information-Internet{
   color: white;
@@ -100,3 +105,80 @@ body{
  button:hover {
      background: #3192FF;
  }
+ @media(max-width:767px){
+   .toggle-burger{
+     top: -65px;
+     width: 40px;
+     height: 50px;
+     display: block;
+     position: relative;
+     z-index: 30;
+    }
+    .toggle-burger span,
+    .toggle-burger::before,
+    .toggle-burger::after{
+      width: 40px;
+      height: 5px;
+      background: white;
+      position: absolute;
+    }
+    .toggle-burger span{
+      top: 20px;
+    }
+    .toggle-burger::before{
+      top: 10px;
+      content: '';
+    }
+    .toggle-burger::after{
+      bottom: 15px;
+      content: '';
+    }
+  .toggle-burger.active span {
+    opacity:0;
+    transition: 0.5s;
+}
+  .toggle-burger.active:before {
+    transform: rotate(45deg);
+     top: 20px;
+    transition: 0.3s;
+}
+  .toggle-burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 26px;
+    transition: 0.3s;
+}
+.navigation{
+    display: block;
+    position: absolute;
+    left: 0;
+    background: #6A5ACD;
+    width: 100%;
+    height: 100vh;
+    top: -100vh;
+  }
+  .nav-item{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    margin-left:70px;
+    margin-top: 20px;
+  }
+  .nav-item:hover{
+   transform: scale(1);
+  }
+  .navigation.active{
+    top: 70px;
+    transition: 0.4s;
+    }
+ }
+
+@media (max-width:767px) {
+  .title-Data-trans{
+    font-size: 2rem;
+  }
+  .text-information-Internet{
+    font-size: 1.2rem;
+  }
+  .content-container{
+    background: black;
+  }
+}
